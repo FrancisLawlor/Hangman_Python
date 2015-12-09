@@ -86,6 +86,16 @@ def has_been_guessed(guess, guessed_letters):
 
     return False;
 
+def get_guess():
+    single_letter=False;
+
+    while single_letter==False:
+        guess=input('\n\nPlease enter your guess: ');
+        if len(guess)==1:
+                return guess;
+        print("\n\nPlease input just one letter.")
+
+
 lives=6; #game starts with 6 lives
 secret_word=get_word(); #secret_word is set initially
 clear_screen();
@@ -115,7 +125,7 @@ while compare_secret_with_revealed(secret_word, disguised_word)==False: #loop wi
         print ("\n\nYou have ", end="");
         print (lives, end="");
         print (" lives remaining.", end="");
-        guess=input("\n\nPlease input letter for guess: "); #obtain letter for guess.
+        guess=get_guess(); #obtain letter for guess.
         clear_screen();
         print ("You guessed " + guess + "!\n\n" + guess + " occurs ", end="");
         print (count_guess_occurrence(lower_secret_word, guess), end="");
