@@ -1,4 +1,5 @@
-# Python---Hangman
+# Hangman
+
 A simple Hangman game created in Python.
 
 Player 1 selects a word to be guessed.
