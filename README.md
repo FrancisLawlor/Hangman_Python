@@ -1,5 +1,7 @@
 # Hangman
 
+![Hangman](http://i.imgur.com/tUqayBE.png)
+
 A simple Hangman game created in Python 3.
 
 Player 1 selects a word to be guessed.
