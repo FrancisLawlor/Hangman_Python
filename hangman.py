@@ -1,7 +1,4 @@
-def get_word():
-    secret_word = input("Please enter secret word: ") #store input in variable
-
-    return secret_word #return word to be guessed
+import InputMechanics
 
 def disguise_word(secret_word):
     str=[] #initialise empty list
@@ -86,18 +83,9 @@ def has_been_guessed(guess, guessed_letters):
 
     return False
 
-def get_guess():
-    single_letter=False
-
-    while single_letter==False:
-        guess=input('\n\nPlease enter your guess: ')
-        if len(guess)==1:
-                return guess
-        print("\n\nPlease input just one letter.")
-
 
 lives=6 #game starts with 6 lives
-secret_word=get_word() #secret_word is set initially
+secret_word=InputMechanics.get_word() #secret_word is set initially
 clear_screen()
 lower_secret_word=secret_word.lower() #change secret_word to all lower case
 disguised_word=disguise_word(secret_word) #disguise the secret_word with underscores
@@ -107,7 +95,7 @@ while compare_secret_with_revealed(secret_word, disguised_word)==False: #loop wi
     print ("\n\n")
 
     print_gallows(lives) #print the gallows depending on the number of lives.
-    print_disguised_word (disguised_word) #print out the disguised word.
+    print_disguised_word(disguised_word) #print out the disguised word.
 
     if lives==0:
         print ("\n\nYou have no lives remaining.\n\nGAME OVER")
@@ -125,7 +113,7 @@ while compare_secret_with_revealed(secret_word, disguised_word)==False: #loop wi
         print ("\n\nYou have ", end="")
         print (lives, end="")
         print (" lives remaining.", end="")
-        guess=get_guess() #obtain letter for guess.
+        guess=InputMechanics.get_guess() #obtain letter for guess.
         clear_screen()
         print ("You guessed " + guess + "!\n\n" + guess + " occurs ", end="")
         print (count_guess_occurrence(lower_secret_word, guess), end="")
