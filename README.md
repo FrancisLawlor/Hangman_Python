@@ -8,15 +8,15 @@ Player 2 guesses letters until he/she either guess all letters correctly, or run
 
 ### Instructions for use:
 
-* Clone repository.
+Clone repository.
 
-* Navigate to local repo:
+Navigate to local repo:
 
 ```
 > cd mypath/Hangman_Python
 ```
 
-* Run the hangman.py file:
+Run the hangman.py file:
 ```
 > python3 hangman.py
 ```
